@@ -2,6 +2,8 @@
  * Lukas Krampitz
  * 10 Jan 2023
  * assignment1_part6
+ * Using the two functions defined for Question 4 and Question 5, implement a program that prints all the
+ * perfect numbers less than 10,000 in descending order.
  */
 #include <stdio.h>
 
@@ -12,7 +14,7 @@ int main(void)
 {
 
     // loop through all the numbers less than 10,000
-    for (int i = 10000; i > 0; i--) //excludes 0 and used 6 as the smallest perfect number. Source: https://www.britannica.com/science/perfect-number
+    for (int i = 10000; i > 0; i--) // excludes 0 and used 6 as the smallest perfect number. Source: https://www.britannica.com/science/perfect-number
     {
         if (isPerfect(i))
         {

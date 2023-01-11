@@ -2,6 +2,9 @@
  * Lukas Krampitz
  * 10 Jan 2023
  * assignment1_part5
+ * Implement a function that takes an integer n as a parameter and checks whether n is a perfect number
+ * using the function defined in Question 4. If n is a perfect number, it returns 1, otherwise 0 (a number is
+ * a perfect number if it is equal to the sum of its divisors excluding the number itself).
  */
 #include <stdio.h>
 

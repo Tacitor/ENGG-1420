@@ -2,6 +2,7 @@
  * Lukas Krampitz
  * 10 Jan 2023
  * assignment1_part3
+ * Implement a program that takes 5 numbers from input and prints the largest and smallest numbers.
  */
 #include <stdio.h>
 
@@ -30,13 +31,13 @@ int main(void)
         {
             biggest = i; // if the new value is bigger set it as the new biggest
         }
-        else if (nums[i] < nums[smallest]) //check for the smallest
+        else if (nums[i] < nums[smallest]) // check for the smallest
         {
             smallest = i; // if the new value is bigger set it as the new biggest
         }
     }
 
-    //print out the values
+    // print out the values
     printf("The largest value entered was %d, and the smallest was %d.", nums[biggest], nums[smallest]);
 
     return 0;

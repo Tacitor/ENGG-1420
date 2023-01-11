@@ -2,6 +2,14 @@
  * Lukas Krampitz
  * 10 Jan 2023
  * assignment1_part7
+ * Define a structure called Date that contains 3 members: year, month, and day. Then:
+ *  a. Implement a function called getNextDate that takes a Date parameter and returns a Date which
+ *      is 1 day after the date of the input parameter. For example, if the function’s input is equal to
+ *      1/6/2022, the function must return 1/7/2022. (Do not consider leap years.)
+ *  b. Implement a function that takes two parameters of the Date type and compares them.
+ *      i. If the two parameters refer to the same date, the function returns zero,
+ *      ii. If the first parameter is a date after the date of the second parameter, it returns +1,
+ *      iii. If the first parameter is the date before the date of the second parameter, it returns -1.
  */
 #include <stdio.h>
 

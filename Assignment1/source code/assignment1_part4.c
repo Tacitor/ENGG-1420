@@ -2,6 +2,8 @@
  * Lukas Krampitz
  * 10 Jan 2023
  * assignment1_part4
+ * Implement a function that takes an integer n as a parameter and calculates and returns the sum of all
+ * divisors of n. For example, if n = 6 then this function must return 12.
  */
 #include <stdio.h>
 
