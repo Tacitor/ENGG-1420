@@ -20,7 +20,8 @@ public class Assignment2Part4 {
      */
     public static void main(String[] args) {
 
-        int userInputNum, sum = 0;
+        int userInputNum; //Stores the input given from the user
+        int sum = 0; //sum is an accumulator variable the will keep track of the running sum of number given
 
         //loop forever
         while (true) {
