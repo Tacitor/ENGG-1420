@@ -40,11 +40,13 @@ public class Assignment2Part4 {
                 sum += userInputNum;
 
             } catch (NumberFormatException e) {
+                //Tell the user they have given bad input
                 System.out.println("ERROR: Please enter a valid numebr\n" + e);
             }
 
         }
 
+        //Display the result
         System.out.println("The sum of all your numbers is: " + sum);
 
     }
