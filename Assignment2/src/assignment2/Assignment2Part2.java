@@ -18,13 +18,13 @@ public class Assignment2Part2 {
     public static void main(String[] args) {
         //Vars
         final int STOP_VAL = 10000; //The value the search should stop at. This value itself is not checked
-        boolean hasFactor; //keeps track if a factor has been found yet
+        int hasFactor; //keeps track if a factor has been found yet
 
         //loop until the STOP_VAL is reached
         for (int count = 2; count < STOP_VAL; count++) { //Start at 2 since 1 is not a prime.
 
             //reset hasFactor to false for this new value
-            hasFactor = false;
+            hasFactor = 0;
 
             //loop through all values of i less than the current value (count)
             for (int i = 2; i < count; i++) { //skip 1 as it is always a factor
@@ -32,15 +32,18 @@ public class Assignment2Part2 {
                 //test if i is a factor
                 switch (count % i) {
                     case 0:
-                        hasFactor = true;
+                        hasFactor = 1;
                         break;
                 }
             }
 
             //print the value if it had no factors
-            if (!hasFactor) {
-                System.out.println(count);
+            switch (hasFactor) {
+                case 0:
+                    System.out.println(count);
+                    break;
             }
+
         }
 
     }
