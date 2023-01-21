@@ -125,13 +125,26 @@ public class Rect {
      * length, width, circumference, and area.
      */
     public void print() {
-        System.out.println("Rectangle:"
+        System.out.println(toString());
+    }
+
+    /**
+     * Creates and returns a String representation of the <code>Rect</code>
+     * object.
+     *
+     * @return
+     */
+    @Override
+    public String toString() {
+        String result = "Rectangle:"
                 + "\nX Position: " + posX
                 + "\nY Position: " + posY
                 + "\nLength: " + length
                 + "\nWidth: " + width
                 + "\nPerimeter: " + getPerimeter()
-                + "\nArea: " + getArea());
-    }
+                + "\nArea: " + getArea();
 
+        return result;
+
+    }
 }
