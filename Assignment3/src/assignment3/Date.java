@@ -78,7 +78,7 @@ public class Date {
          * Do not make the year conform to formatting. Any year more or less than 
          * 4 digits does not use the Gregorian calendar and wouldn't make use of this format anyway
          */
-        return "(" + twoDigits.format(day) + "/" + twoDigits.format(month) + "/" + year;
+        return "(" + twoDigits.format(day) + "/" + twoDigits.format(month) + "/" + year + ")";
 
     }
 
@@ -100,7 +100,7 @@ public class Date {
      * of the input parameter.
      *
      */
-    public void nextDate() {
+    private void nextDate() {
 
         // increment the day
         day++;
@@ -127,7 +127,8 @@ public class Date {
 
     /**
      * Takes a parameter of type Date and calculates the number of days between
-     * the date of the current object and the input object
+     * the date of the current object and the input object. The returned value
+     * is signed depending on if the dates are before or after each other.
      *
      * @param otherDate
      * @return
@@ -149,7 +150,7 @@ public class Date {
         for (int i = 0; i < Math.abs(monthDiff); i++) {
 
             //for each month of difference look up the days in that month and add them
-            totalDays += daysPerMonth[Math.min(this.month, otherDate.month) + i];
+            totalDays += (daysPerMonth[Math.min(this.month, otherDate.month) + i - 1]) * (monthDiff / Math.abs(monthDiff)); //Time either 1 or -1 for either addion or subtraction
 
         }
 
