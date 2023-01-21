@@ -43,8 +43,8 @@ public class Rect {
         posY = 1;
 
         //set the given attributes
-        this.length = length;
-        this.width = width;
+        setLength(length);
+        setWidth(width);
 
     }
 
@@ -62,9 +62,59 @@ public class Rect {
         this(length, width);
 
         //set the given attributes
-        this.posX = posX;
-        this.posY = posY;
+        setPosX(posX);
+        setPosY(posY);
 
+    }
+
+    /**
+     * Mutator for the X Co-ordinate of the Rectangle.
+     *
+     * @param posX
+     */
+    public void setPosX(int posX) {
+        this.posX = posX;
+    }
+
+    /**
+     * Mutator for the Y Co-ordinate of the Rectangle.
+     *
+     * @param posY
+     */
+    public void setPosY(int posY) {
+        this.posY = posY;
+    }
+
+    /**
+     * Mutator for the length of the Rectangle.
+     *
+     * @param length
+     */
+    public void setLength(int length) {
+        //check for a 0 value
+        if (length == 0) {
+            //set the length to 1
+            this.length = 1;
+        } else {
+            //if another value is given make sure it is positive
+            this.length = Math.abs(length);
+        }
+    }
+
+    /**
+     * Mutator for the width of the Rectangle.
+     *
+     * @param width
+     */
+    public void setWidth(int width) {
+        //check for a 0 value
+        if (width == 0) {
+            //set the width to 1
+            this.width = 1;
+        } else {
+            //if another value is given make sure it is positive
+            this.width = Math.abs(width);
+        }
     }
 
     /**
@@ -106,6 +156,19 @@ public class Rect {
      */
     public void changeSize(int n) {
         length = width = n;
+    }
+
+    /**
+     * Takes an object of type <code>Rect</code> as a parameter and compares it
+     * with the current rectangle. If the area of the current object is larger
+     * than the area of the parameter object, return true and otherwise return
+     * false.
+     *
+     * @param otherRect
+     * @return
+     */
+    public boolean isBiggerThan(Rect otherRect) {
+        return this.getArea() > otherRect.getArea();
     }
 
     /**
