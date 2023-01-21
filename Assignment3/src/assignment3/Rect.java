@@ -32,36 +32,24 @@ public class Rect {
     private int width;
 
     /**
-     * Main constructor. Defaults the rectangle to bet at (0, 0) and of 1x1
-     * length and width.
-     */
-    public Rect() {
-        posX = 0;
-        posY = 0;
-
-        length = 1;
-        width = 1;
-    }
-
-    /**
-     * Secondary Constructor. The still defaults to a 1x1 rectangle. But now the
-     * position is user defined.
+     * Main Constructor. The defaults to a rectangle at position (1, 1). But the
+     * dimensions is user defined.
      *
-     * @param posX
-     * @param posY
+     * @param length
+     * @param width
      */
-    public Rect(int posX, int posY) {
-        //call the main constructor
-        this();
+    public Rect(int length, int width) {
+        posX = 1;
+        posY = 1;
 
         //set the given attributes
-        this.posX = posX;
-        this.posY = posY;
+        this.length = length;
+        this.width = width;
 
     }
 
     /**
-     * Tertiary constructor. Fully user defined parameters.
+     * Secondary constructor. Fully user defined parameters.
      *
      * @param posX
      * @param posY
@@ -70,12 +58,12 @@ public class Rect {
      */
     public Rect(int posX, int posY, int length, int width) {
 
-        //call the Secondary constructor
-        this(posX, posY);
+        //call the Primary constructor
+        this(length, width);
 
         //set the given attributes
-        this.length = length;
-        this.width = width;
+        this.posX = posX;
+        this.posY = posY;
 
     }
 
