@@ -22,7 +22,19 @@ public class Program {
         Rect myRect = new Rect(10, 25, 8, 21); //Set the corner to be at (10, 25) and make it of length 8 and width 21
 
         //Test the perimeter
-        System.out.println("The perimeter is: " + myRect);
+        System.out.println("The perimeter is: " + myRect.getPerimeter());
+
+        //Test the area
+        System.out.println("The area is: " + myRect.getArea());
+
+        //Move it
+        myRect.move(60, 57);
+
+        //Change the size to a 4 by 4 square
+        myRect.changeSize(4);
+
+        //Test the print method and to see if the mutators worked
+        myRect.print();
 
     }
 
