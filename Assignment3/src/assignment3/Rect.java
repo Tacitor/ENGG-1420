@@ -77,12 +77,30 @@ public class Rect {
     }
 
     /**
+     * Accessor for the X Co-ordinate of the Rectangle.
+     *
+     * @return
+     */
+    public int getPosX() {
+        return posX;
+    }
+
+    /**
      * Mutator for the Y Co-ordinate of the Rectangle.
      *
      * @param posY
      */
     public void setPosY(int posY) {
         this.posY = posY;
+    }
+
+    /**
+     * Accessor for the Y Co-ordinate of the Rectangle.
+     *
+     * @return
+     */
+    public int getPosY() {
+        return posY;
     }
 
     /**
@@ -102,6 +120,15 @@ public class Rect {
     }
 
     /**
+     * Accessor for the length dimension of the Rectangle.
+     *
+     * @return length
+     */
+    public int getLength() {
+        return length;
+    }
+
+    /**
      * Mutator for the width of the Rectangle.
      *
      * @param width
@@ -115,6 +142,15 @@ public class Rect {
             //if another value is given make sure it is positive
             this.width = Math.abs(width);
         }
+    }
+
+    /**
+     * Accessor for the width dimension of the Rectangle.
+     *
+     * @return width
+     */
+    public int getWidth() {
+        return width;
     }
 
     /**
@@ -192,7 +228,7 @@ public class Rect {
                 + "\nY Position: " + posY
                 + "\nLength: " + length
                 + "\nWidth: " + width
-                + "\nPerimeter: " + getPerimeter()
+                + "\nCircumference: " + getPerimeter()
                 + "\nArea: " + getArea();
 
         return result;
