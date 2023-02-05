@@ -83,7 +83,7 @@ public class Book {
 
             //check for a comma
             if (workingAuthors[i] == ' ' && workingAuthors[i - 1] == ',') { //check for a space after a comma
-                
+
                 printOutput.append("\n");
             } else {
                 //add the char 

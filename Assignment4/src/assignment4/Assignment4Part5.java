@@ -88,7 +88,7 @@ public class Assignment4Part5 {
             if (address.matches(underScorePatternBefore) || address.matches(underScorePatternAfter)) {
                 numAddress++;
             }
-            
+
             //check for gmails
             if (address.matches(gmailPattern)) {
                 numGmail++;

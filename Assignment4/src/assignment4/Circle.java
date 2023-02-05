@@ -104,11 +104,11 @@ public class Circle {
             //initialize the circle
             circles[i] = new Circle(i + 1);
         }
-        
+
         //add the circles all together
         C.addAll(circles);
-    
+        
         System.out.println("The Circle C has a radius of: " + C.getRadius());
     }
-
+    
 }
