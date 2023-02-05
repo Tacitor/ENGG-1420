@@ -6,6 +6,11 @@
  * the radius of the current object (the object on which the method is called). Then,
  *      a. Define a method called addAll in this class that takes an array of elements of type Circle as a
  *          parameter and adds the radius of all these circles to the radius of the current object.
+ * 
+ * 7. Implement a main method in the Circle class and create an array of 100 circles with radiuses of 1 to 100.
+ * Further, create a circle C with a random radius (between 10 and 1000), and add the first 100 circles to
+ * circle C using the addAll method. Before and after this operation, print the value of the radius of the circle
+ * C.
  */
 package assignment4;
 
@@ -80,6 +85,30 @@ public class Circle {
             //add up the circles
             this.add(c);
         }
+    }
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+        //create the array
+        Circle circles[] = new Circle[100];
+
+        //create the circle of random radius from 10 - 1000. Make sure to include both 10 and 1000
+        Circle C = new Circle((int) (Math.random() * (1000 - 10 + 1)) + 10);
+        
+        System.out.println("The Circle C has a radius of: " + C.getRadius());
+
+        //set the radii
+        for (int i = 0; i < circles.length; i++) {
+            //initialize the circle
+            circles[i] = new Circle(i + 1);
+        }
+        
+        //add the circles all together
+        C.addAll(circles);
+    
+        System.out.println("The Circle C has a radius of: " + C.getRadius());
     }
 
 }
