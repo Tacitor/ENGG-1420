@@ -18,9 +18,24 @@ public abstract class FileUtils {
     public static String createRandomFile() throws IOException {
         StringBuilder fileLocation = new StringBuilder();
         //add the current dir
-        fileLocation.append("src\\assignment6\\test.txt");
+        fileLocation.append("src\\assignment6\\");
 
         int validRanges[][] = new int[][]{{97, 26}, {65, 26}}; //has the format of the start index, and then the number of consecutive entries. Gets the upper and lowercase letters in ASCII values
+
+        int newNum;
+        int rangeNum;
+
+        //generate the name
+        for (int i = 0; i < 15; i++) {
+            //pick a range
+            rangeNum = (int) (Math.random() * validRanges.length);
+
+            //pick a random letter
+            fileLocation.append((char) ((int) (Math.random() * validRanges[rangeNum][1]) + validRanges[rangeNum][0]));
+
+        }
+
+        fileLocation.append(".txt");
 
         try {
             //Try and create the file
