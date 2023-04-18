@@ -80,15 +80,14 @@ public abstract class FileUtils {
 
                 //try catch with resources the IOException while writing to the files
                 try (PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(newFile)))) {
-                    System.out.println("Le stuff: " + filesList.get(i).toString());
-                    System.out.println("Done");
+                    
                     pw.print(filesList.get(i).toString());
 
                 } catch (IOException e) {
                     System.out.println("Error: " + e);
                 }//finally is implied
 
-                System.out.println(newFile.getAbsolutePath());
+                //System.out.println(newFile.getAbsolutePath());
             }
 
         } catch (IOException e) {
