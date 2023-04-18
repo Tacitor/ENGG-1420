@@ -7,12 +7,32 @@ package assignment6;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 /**
  *
  * @author Tacitor
  */
 public abstract class FileUtils {
+
+    public static String createRandomFile() throws IOException {
+        StringBuilder fileLocation = new StringBuilder();
+        //add the current dir
+        fileLocation.append("src\\assignment6\\test.txt");
+
+        int validRanges[][] = new int[][]{{97, 26}, {65, 26}}; //has the format of the start index, and then the number of consecutive entries. Gets the upper and lowercase letters in ASCII values
+
+        try {
+            //Try and create the file
+            File file = new File(fileLocation.toString());
+            System.out.println("Made File: " + file.createNewFile());
+
+            return file.getAbsolutePath();
+        } catch (IOException e) {
+            throw new IOException("ERROR in createRandomFile() in FileUtils.java: " + e);
+        }
+
+    }
 
     public static long length(String path) throws PathNotAFolderException, FileNotFoundException {
         return length(path, false);
