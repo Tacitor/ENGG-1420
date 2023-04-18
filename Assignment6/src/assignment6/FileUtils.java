@@ -5,15 +5,98 @@
  */
 package assignment6;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  *
  * @author Tacitor
  */
 public abstract class FileUtils {
+
+    public static void split(String fileName, int n) throws FileNotFoundException {
+
+        //
+        File ogFile = new File(fileName);
+        String justTheFileName;
+        ArrayList<StringBuilder> filesList = new ArrayList<>();
+        //setup the frist builder
+        filesList.add(new StringBuilder());
+
+        //test to see if it exists
+        if (!ogFile.exists()) {
+            throw new FileNotFoundException("Error: file not found.");
+        }
+
+        //grab the file name
+        justTheFileName = ogFile.getName();
+        justTheFileName = justTheFileName.split("\\.")[0];
+        String line;
+        int fileCount = 0; //the index of the file currently being worked on
+        int lineCount = 0; //the number of lines added to the current file
+
+        //make a try with resources to read the Text File using character streams
+        try (BufferedReader stringReader = new BufferedReader(new FileReader(ogFile))) {
+
+            //loop until the end of the file is reached
+            while (true) {
+                line = stringReader.readLine();
+
+                //check for end of file
+                if (line == null) {
+                    break;
+                }
+
+                //check if the max lines are reached
+                if (lineCount >= n) {
+                    //startup a new file
+                    fileCount++;
+                    filesList.add(new StringBuilder());
+                    lineCount = 0;
+                }
+
+                //add the line to the current file
+                //only add a new line if not the first line
+                if (lineCount != 0) {
+                    filesList.get(fileCount).append("\n");
+                }
+                filesList.get(fileCount).append(line);
+                lineCount++;
+
+            }
+
+            //create the files
+            File newFile;
+            for (int i = 0; i < filesList.size(); i++) {
+                newFile = new File("src\\assignment6\\" + justTheFileName + (i + 1) + ".txt");
+
+                //try catch with resources the IOException while writing to the files
+                try (PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(newFile)))) {
+                    System.out.println("Le stuff: " + filesList.get(i).toString());
+                    System.out.println("Done");
+                    pw.print(filesList.get(i).toString());
+
+                } catch (IOException e) {
+                    System.out.println("Error: " + e);
+                }//finally is implied
+
+                System.out.println(newFile.getAbsolutePath());
+            }
+
+        } catch (IOException e) {
+            System.out.println("It would appear to to and error: " + e);
+        }
+        //the finally is implicit to close the file
+
+    }
 
     public static String createRandomFile() throws IOException {
         StringBuilder fileLocation = new StringBuilder();
